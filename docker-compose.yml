@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  service:
+    build: .
+    command: sh -c 'java -jar /app/target/bbqtime-0.1.0.jar'
+    restart: on-failure
+    ports:
+      - 9000:8080
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+
+volumes:
+  data:
+  static-content:
